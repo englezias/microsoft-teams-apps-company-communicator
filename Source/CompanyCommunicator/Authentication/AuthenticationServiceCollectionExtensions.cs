@@ -8,6 +8,7 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator.Authentication
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Security.Cryptography.X509Certificates;
     using Microsoft.AspNetCore.Authentication.AzureAD.UI;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Authorization;
@@ -85,7 +86,11 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator.Authentication
                      configuration.Bind("AzureAd", microsoftIdentityOptions);
                      microsoftIdentityOptions.ClientCertificates = new CertificateDescription[]
                      {
-                            CertificateDescription.FromKeyVault(configuration.GetValue<string>("KeyVault:Url"), configuration.GetValue<string>("GraphAppCertName")),
+                            CertificateDescription.FromStoreWithThumbprint(
+                                certificateThumbprint: configuration.GetValue<string>("GraphAppCertName"),
+                                storeLocation: StoreLocation.CurrentUser,
+                                storeName: StoreName.My,
+                                isValid:false),
                      };
                  })
                  .EnableTokenAcquisitionToCallDownstreamApi(

@@ -22,6 +22,7 @@ The app provides an easy interface for designated users to create, preview, coll
 * **Audience selection:** Pick from four options to target audience. Send to general channel of selected teams, send in 1:1 chat to members of selected teams, send to all users who have the app installed or send to M365 groups, distribution lists or security groups.
 * **Message metrics:** Export messages delivery report.
 * **Localization:** Supports multiple locales.
+* **Single-tenant ready:** Bot registrations are scoped to the deployment tenant by default; set the deployment script `MultiTenant` flag to `true` only if you need cross-tenant sign-in.
 * **Accessibility Compliant:** Company Communicator v5.4.1 is in compliant with Microsoft accessibility standards for Web, Windows and Mac OS.
 * **Feedback:** Submit your feedback to the product team.
 

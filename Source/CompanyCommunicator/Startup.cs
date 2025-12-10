@@ -183,8 +183,7 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator
             // Add draft notification preview services.
             services.AddSingleton<IDraftNotificationPreviewService, DraftNotificationPreviewService>();
 
-            string keyVaultUrl = this.Configuration.GetValue<string>("KeyVault:Url");
-            services.AddSecretsProvider(keyVaultUrl);
+            services.AddSecretsProvider();
 
             // Add microsoft graph services.
             services.AddScoped<IAuthenticationProvider, GraphTokenProvider>();

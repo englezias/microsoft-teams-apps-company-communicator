@@ -32,7 +32,7 @@ To begin, you will need:
 * A team with the users who will be sending messages with this app. (You can add or remove team members later!)
 * A copy of the Company Communicator app GitHub repo (https://github.com/OfficeDev/microsoft-teams-company-communicator-app)
 
-> **NOTE:** If you plan to use a custom domain name instead of relying on Azure Front Door, read the instructions [here](Custom-domain-option) first.
+> **NOTE:** Company Communicator now relies on the default *.azurewebsites.net hostname. If you want to use a custom domain name, read the instructions [here](Custom-domain-option) first.
 
 - - -
 
@@ -160,7 +160,7 @@ Register three Azure AD application in your tenant's directory: one for author b
     * **userBotId:** This is the Microsoft Application ID for the Company Communicator app. For the following steps, it will be referred to as `%userBotId%`.
     * **appDomain:** This is the base domain for the Company Communicator app. For the following steps, it will be referred to as `%appDomain%`.
 
-> **IMPORTANT:** If you plan to use a custom domain name instead of relying on Azure Front Door, read the instructions [here](Custom-domain-option) before continuing any further.
+> **IMPORTANT:** If you want to use a custom domain name instead of the default *.azurewebsites.net host, read the instructions [here](Custom-domain-option) before continuing any further.
 
 ## 3. Create Key vault Certificate
 1. On the Key vault page, select **Certificates**.
@@ -228,7 +228,7 @@ You can download by Clicking "Download in CER format" button.
 
     1. Add a new entry to **Redirect URIs**:
         - **Type**: Web
-        - **Redirect URI**: Enter `https://%appDomain%/signin-simple-end` for the URL e.g. `https://appName.azurefd.net/signin-simple-end`
+        - **Redirect URI**: Enter `https://%appDomain%/signin-simple-end` for the URL e.g. `https://appName.azurewebsites.net/signin-simple-end`
 
     1. Under **Implicit grant**, check **ID tokens**.
 
@@ -236,7 +236,7 @@ You can download by Clicking "Download in CER format" button.
 
 1. Back under **Manage**, click on **Expose an API**.
 
-    1. Click on the **Set** link next to **Application ID URI**, and change the value to `api://%appDomain%` e.g. `api://appName.azurefd.net`.
+    1. Click on the **Set** link next to **Application ID URI**, and change the value to `api://%appDomain%` e.g. `api://appName.azurewebsites.net`.
 
     1. Click **Save** to commit your changes.
 
@@ -326,13 +326,13 @@ Create two Teams app packages: one to be installed to an Authors team and other 
     * `developer.privacyUrl`
     * `developer.termsOfUseUrl`
 
-1. Change the `<<appDomain>>` placholder in the configurationUrl setting to be the `%appDomain%` value e.g. "`https://appName.azurefd.net/configtab`".
+1. Change the `<<appDomain>>` placholder in the configurationUrl setting to be the `%appDomain%` value e.g. "`https://appName.azurewebsites.net/configtab`".
 
 1. Change the `<<botId>>` placeholder in the botId setting to be the `%authorBotId%` value - this is your author Azure AD application's ID from above. This is the same GUID that you entered in the template under "Author Client ID". Please note that there are two places in the manifest (for authors) where you will need to update Bot ID.
 
-1. Change the `<<appDomain>>` placeholder in the validDomains setting to be the `%appDomain%` value e.g. "`appName.azurefd.net`".
+1. Change the `<<appDomain>>` placeholder in the validDomains setting to be the `%appDomain%` value e.g. "`appName.azurewebsites.net`".
 
-1. Change the `<<botId>>` placeholder in the id setting of the webApplicationInfo section to be the `%authorBotId%` value. Change the `<<appDomain>>` placeholder in the resource setting of the webApplicationInfo section to be the `%appDomain%` value e.g. "`api://appName.azurefd.net`".
+1. Change the `<<botId>>` placeholder in the id setting of the webApplicationInfo section to be the `%authorBotId%` value. Change the `<<appDomain>>` placeholder in the resource setting of the webApplicationInfo section to be the `%appDomain%` value e.g. "`api://appName.azurewebsites.net`".
 
 1. Copy the `manifest_authors.json` file to a file named `manifest.json`.
 

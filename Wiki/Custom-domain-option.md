@@ -1,4 +1,4 @@
-As an alternative to using Azure Front Door, you can register a custom domain for your app.
+You can register a custom domain for your app and bind it directly to the Azure Web App.
 
 ## Fresh deployment
 

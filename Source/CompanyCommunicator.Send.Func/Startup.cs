@@ -113,9 +113,8 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator.Send.Func
             // Add the cache services
             builder.Services.AddSingleton<IMemoryCache, MemoryCache>();
 
-            // Add Secrets.
-            var keyVaultUrl = Environment.GetEnvironmentVariable("KeyVault:Url");
-            builder.Services.AddSecretsProvider(keyVaultUrl);
+            // Add certificate provider when certificate authentication is enabled.
+            builder.Services.AddSecretsProvider();
         }
     }
 }

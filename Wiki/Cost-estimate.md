@@ -5,9 +5,8 @@ The estimate below assumes:
 * 1 message sent to all users each week (~5/month)
 * Administrator opts to create a custom domain name and obtain an SSL certificate for the site. 
     * When purchased through Azure, this is *typically* ~$12 for a domain name, and $75/year for the SSL certificate.
-    * If you choose to use Azure Front Door, that adds a monthly cost of $46 (for 2 routing rules + minimal bandwidth consumption).
 
-> The template defaults to using Azure Front Door, to reduce the cost of trying out and experimenting with the template, rather than requiring you to get a custom domain outright. For instance, you can run your instance for a few days, then turn off the services, and only pay for your actual Azure usage when the services were on.
+> Azure Front Door is no longer part of the deployment. The service now relies on the default *.azurewebsites.net hostname unless you bind your own custom domain to the web app.
 
 We ignore:
 * Operations associated with app installations, as that happens only once per user/team
@@ -74,7 +73,6 @@ App Service Plan                            | S2            | 730 hours         
 App Service (Bot + Tab)                     | -             |                   | (charged to App Service Plan) 
 Azure Function                              | Dedicated     | 10000 executions   | (free up to 1 million executions)
 Service Bus                                 | Basic         | 10000 operations  | $0.01
-Azure Front Door                            | Azure Front Door Classic          | < 1GB data transfer, 2 routing rules        | $0.50 + $0.01 + $43.65 = $44.16
 Log Analytics Workspace (App Insights)                        | -             |  < 1GB data ingested        | $2.30
 **Total**                                   |               |                   | **$192.86**
 
@@ -128,7 +126,6 @@ App Service Plan                            | S2            | 730 hours         
 App Service (Bot + Tab)                     | -             |                   | (charged to App Service Plan) 
 Azure Function                              | Dedicated     | 1M executions     | (free up to 1 million executions)
 Service Bus                                 | Basic         | 2M executions     | $0.10
-Azure Front Door                            | Azure Front Door Classic          | < 3GB data transfer, 2 routing rules        | $0.50 + $0.03 + $43.65 = $44.18
 Log Analytics Workspace (App Insights)                        | -             |  < 1GB data ingested        | $2.30
 **Total**                                   |               |                   | **$193.38**
 
@@ -181,6 +178,5 @@ App Service Plan                            | S2            | 730 hours         
 App Service (Bot + Tab)                     | -             |                   | (charged to App Service Plan) 
 Azure Function                              | Dedicated     | 2M executions     | $5.80
 Service Bus                                 | Basic         | 2M executions     | $0.10
-Azure Front Door                            | Azure Front Door Classic          | < 3GB data transfer, 2 routing rules        | $0.50 + $0.03 + $43.65 = $44.18
 Log Analytics Workspace (App Insights)                        | -             |  < 1GB data ingested        | $2.30
 **Total**                                   |               |                   | **$199.64**
