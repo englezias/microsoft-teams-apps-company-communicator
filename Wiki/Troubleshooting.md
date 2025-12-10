@@ -43,7 +43,7 @@ If you had to do this, you may not have received the **authorBotId**, **userBotI
 
 * **authorBotId:** This is the author Microsoft Application ID for the Company Communicator app. It can be found in the "AuthorAppId" field of your configuration e.g. 5630f8a2-c2a0-4cda-bdfa-c2fa87654321. For the following steps, it will be referred to as %authorBotId%.
 * **userBotId:** This is the user Microsoft Application ID for the Company Communicator app. It can be found in the "UserAppId" field of your configuration e.g. 5630f8a2-c2a0-4cda-bdfa-c2fa87654321. For the following steps, it will be referred to as %userBotId%.
-* **appDomain:** This is the base domain for the Company Communicator app. It is the value in the "AzureAd:ApplicationIdURI" field of your configuration without the "api://" e.g. appName.azurefd.net. For the following steps, it will be referred to as %appDomain%.
+* **appDomain:** This is the base domain for the Company Communicator app. It is the value in the "AzureAd:ApplicationIdURI" field of your configuration without the "api://" e.g. appName.azurewebsites.net. For the following steps, it will be referred to as %appDomain%.
 
 We are currently looking into how to make this process more resilient to intermittent failures.
 
@@ -220,7 +220,7 @@ If you forgot to copy your **authorBotId**, **userBotId** and **appDomain** valu
 
 * **authorBotId:** This is the author Microsoft Application ID for the Company Communicator app. It can be found in the "AuthorAppId" field of your configuration e.g. 5630f8a2-c2a0-4cda-bdfa-c2fa87654321. For the following steps, it will be referred to as %authorBotId%.
 * **userBotId:** This is the user Microsoft Application ID for the Company Communicator app. It can be found in the "UserAppId" field of your configuration e.g. 5630f8a2-c2a0-4cda-bdfa-c2fa87654321. For the following steps, it will be referred to as %userBotId%.
-* **appDomain:** This is the base domain for the Company Communicator app. It is the value in the "AzureAd:ApplicationIdURI" field of your configuration without the "api://" e.g. appName.azurefd.net. For the following steps, it will be referred to as %appDomain%.
+* **appDomain:** This is the base domain for the Company Communicator app. It is the value in the "AzureAd:ApplicationIdURI" field of your configuration without the "api://" e.g. appName.azurewebsites.net. For the following steps, it will be referred to as %appDomain%.
 
 ### 13. PowerShell deployment is successful with the below error?
 

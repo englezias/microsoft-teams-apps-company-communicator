@@ -100,9 +100,8 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator.Data.Func
             builder.Services.AddSingleton<BotFrameworkAuthentication, ConfigurationBotFrameworkAuthentication>();
             builder.Services.AddSingleton<CCBotAdapterBase, CCBotAdapter>();
 
-            // Add Secrets.
-            var keyVaultUrl = Environment.GetEnvironmentVariable("KeyVault:Url");
-            builder.Services.AddSecretsProvider(keyVaultUrl);
+            // Add certificate provider when certificate authentication is enabled.
+            builder.Services.AddSecretsProvider();
 
             // Add services.
             builder.Services.AddSingleton<IFileCardService, FileCardService>();

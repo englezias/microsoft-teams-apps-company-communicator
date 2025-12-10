@@ -148,7 +148,7 @@ Please refer [step 2](https://github.com/OfficeDev/microsoft-teams-company-commu
 
     1. Add a new entry to **Redirect URIs**:
         - **Type**: Web
-        - **Redirect URI**: Enter `https://%appDomain%/signin-simple-end` for the URL e.g. `https://appName.azurefd.net/signin-simple-end`
+        - **Redirect URI**: Enter `https://%appDomain%/signin-simple-end` for the URL e.g. `https://appName.azurewebsites.net/signin-simple-end`
 
     1. Under **Implicit grant**, check **ID tokens**.
 
@@ -156,7 +156,7 @@ Please refer [step 2](https://github.com/OfficeDev/microsoft-teams-company-commu
 
 1. Back under **Manage**, click on **Expose an API**.
 
-    1. Click on the **Set** link next to **Application ID URI**, and change the value to `api://%appDomain%` e.g. `api://appName.azurefd.net`.
+    1. Click on the **Set** link next to **Application ID URI**, and change the value to `api://%appDomain%` e.g. `api://appName.azurewebsites.net`.
 
     1. Click **Save** to commit your changes.
 

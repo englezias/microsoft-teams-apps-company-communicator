@@ -152,9 +152,8 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func
             builder.Services.AddTransient<ITeamMembersService, TeamMembersService>();
             builder.Services.AddTransient<IConversationService, ConversationService>();
 
-            // Add Secrets.
-            var keyVaultUrl = Environment.GetEnvironmentVariable("KeyVault:Url");
-            builder.Services.AddSecretsProvider(keyVaultUrl);
+            // Add certificate provider when certificate authentication is enabled.
+            builder.Services.AddSecretsProvider();
 
             // Add graph services.
             this.AddGraphServices(builder);

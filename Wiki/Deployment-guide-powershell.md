@@ -28,7 +28,6 @@ To begin, you will need:
 * A team with the users who will be sending messages with this app. (You can add and remove team members later!)
 * A copy of the Company Communicator app GitHub repo ([https://github.com/OfficeDev/microsoft-teams-company-communicator-app](https://github.com/OfficeDev/microsoft-teams-company-communicator-app))
 
-> NOTE:  If you plan to use a custom domain name instead of relying on Azure Front Door, read the instructions [here](https://github.com/OfficeDev/microsoft-teams-company-communicator-app/wiki/Custom-domain-option) first.
 
 ---
 
@@ -120,8 +119,7 @@ To begin, you will need:
 
     - `graphAppCertName` - If certificate authentication is being used, then give the name for the new certificate of graph app Azure AD app to be created in Azure Key vault.
     
-    - `customDomainOption` - How the app will be hosted on a domain that is not \*.azurewebsites.net. Azure Front Door is an easy option that the template can set up automatically, but it comes with ongoing monthly costs.
-    > **NOTE**:  If you plan to use a custom domain name instead of relying on Azure Front Door, read the instructions [here](https://github.com/OfficeDev/microsoft-teams-company-communicator-app/wiki/Custom-domain-option) first.
+    - The deployment now uses the Azure Web App domain (\*.azurewebsites.net) by default. If you want a vanity hostname, follow the [custom domain guidance](https://github.com/OfficeDev/microsoft-teams-company-communicator-app/wiki/Custom-domain-option) to bind it directly to the web app.
     
     - `proactivelyInstallUserApp`: If proactive app installation should be enabled. Default is true. If enabled, the application will proactively install the User bot for recipients.
     - `userAppExternalId`: Default value is 148a66bb-e83d-425a-927d-09f4299a9274. This is the external Id provided in the User app manifest.
